@@ -34,11 +34,6 @@ function handleError(res, reason, message, code) {
   res.status(code || 500).json({"error": message});
 }
 
-/*  "/api/contacts"
- *    GET: finds all contacts
- *    POST: creates a new contact
- */
-
 app.get("/api/blogs", function(req, res) {
   db.collection(BLOGS_COLLECTION).find({}).toArray(function(err, docs) {
     if (err) {
@@ -69,12 +64,6 @@ app.post("/api/blogs", function(req, res) {
     });
   }
 });
-
-/*  "/api/contacts/:id"
- *    GET: find contact by id
- *    PUT: update contact by id
- *    DELETE: deletes contact by id
- */
 
 app.get("/api/blogs/:id", function(req, res) {
   db.collection(BLOGS_COLLECTION).findOne({ _id: new ObjectID(req.params.id) }, function(err, doc) {
