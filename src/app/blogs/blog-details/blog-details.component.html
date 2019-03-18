@@ -16,8 +16,7 @@
     </div>
     <div class="form-group">
       <label for="blog-content">Content</label>
-      <textarea class="form-control" name="blog-content" [(ngModel)]="blog.content"/>
-      </textarea>
+      <input class="form-control" name="blog-content" [(ngModel)]="blog.content"/>
     </div>
     <button class="btn btn-primary" *ngIf="!blog._id" (click)="createBlog(blog)">Create</button>
     <button class="btn btn-info" *ngIf="blog._id" (click)="updateBlog(blog)">Update</button>
