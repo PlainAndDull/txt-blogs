@@ -5,7 +5,7 @@
       <li class="list-group-item"
         *ngFor="let blog of blogs"
         (click)="selectBlog(blog)"
-        [class.active]="blog === selectedBlog">
+        [class.selected]="blog === selectedBlog">
         <h4>{{blog.title}}</h4>
         <p>{{blog.author}}</p>
         <p>{{blog.content}}</p>
