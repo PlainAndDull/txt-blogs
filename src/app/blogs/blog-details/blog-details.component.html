@@ -1,22 +1,22 @@
 <div *ngIf="blog" class="row">
   <div class="col-md-12">
-    <h2 *ngIf="blog._id">Blog Details</h2>
-    <h2 *ngIf="!blog._id">New Blog</h2>
+    <h1 *ngIf="blog._id">Blog Details</h1>
+    <h1 *ngIf="!blog._id">New Blog</h1>
   </div>
 </div>
 <div *ngIf="blog" class="row">
   <form class="col-md-12">
     <div class="form-group">
       <label for="blog-title">Title</label>
-      <input class="form-control" name="blog-title" [(ngModel)]="blog.title" placeholder="Title"/>
+      <input class="form-control" name="blog-title" [(ngModel)]="blog.title"/>
     </div>
     <div class="form-group">
       <label for="blog-author">Author</label>
-      <input class="form-control" name="blog-author" [(ngModel)]="blog.author" placeholder="Author"/>
+      <input class="form-control" name="blog-author" [(ngModel)]="blog.author"/>
     </div>
     <div class="form-group">
       <label for="blog-content">Content</label>
-      <input class="form-control" name="blog-content" [(ngModel)]="blog.content" placeholder="Content"/>
+      <input class="form-control" name="blog-content" [(ngModel)]="blog.content" type="text"/>
     </div>
     <button class="btn btn-primary" *ngIf="!blog._id" (click)="createBlog(blog)">Create</button>
     <button class="btn btn-info" *ngIf="blog._id" (click)="updateBlog(blog)">Update</button>
