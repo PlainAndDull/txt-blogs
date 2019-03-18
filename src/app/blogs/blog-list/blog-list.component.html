@@ -1,17 +1,19 @@
 <div class="row">
-  <div class="col-md-5">
+  <div class="col-md-6">
     <h2>Blogs</h2>
     <ul class="list-group">
       <li class="list-group-item"
         *ngFor="let blog of blogs"
         (click)="selectBlog(blog)"
         [class.active]="blog === selectedBlog">
-        {{blog.title}}
+        <h4>{{blog.title}}</h4>
+        <h6>{{blog.author}}</h6>
+        <p>{{blog.content}}</p>
       </li>
     </ul>
-    <button class="btn btn-warning" (click)="createNewBlog()">New</button>
+    <button class="btn btn-warning" (click)="createNewBlog()">New Blog</button>
   </div>
-  <div class="col-md-5 col-md-offset-2">
+  <div class="col-md-6 col-md-offset-2">
     <blog-details
       [blog]="selectedBlog"
       [createHandler]="addBlog"
