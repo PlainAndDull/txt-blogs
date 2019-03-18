@@ -14,7 +14,9 @@ import { BlogListComponent } from './blogs/blog-list/blog-list.component';
     BlogListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
