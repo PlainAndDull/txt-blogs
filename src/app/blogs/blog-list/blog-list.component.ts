@@ -71,6 +71,6 @@ export class BlogListComponent implements OnInit {
       this.blogs[idx] = blog;
       this.selectBlog(blog);
     }
-    return this.selectedBlog;
+    return this.blogs;
   }
 }
