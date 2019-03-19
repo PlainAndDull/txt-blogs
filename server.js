@@ -31,7 +31,7 @@ mongodb.MongoClient.connect(process.env.MONGODB_URI || "mongodb://localhost:2701
 
 function handleError(res, reason, message, code) {
   console.log("ERROR: " + reason);
-  res.status(code || 500).json({"error": message});
+  res.status(code || 500).json({"error": message, "reason": reason});
 }
 
 app.get("/api/blogs", function(req, res) {
