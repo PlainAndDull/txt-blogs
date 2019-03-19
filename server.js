@@ -85,8 +85,8 @@ app.put("/api/blogs/:id", function(req, res) {
   } else if (!req.body.content) {
     handleError(res, "Invalid user input", "Must provide content.", 400);
   } else {
-    //delete updateDoc._id;
-    db.collection(BLOGS_COLLECTION).updateOne({_id: new ObjectID(req.params.id)}, updateDoc, function(err, result) {
+    delete updateDoc._id;
+    db.collection(BLOGS_COLLECTION).updateOne({_id: new ObjectID(req.params.id)}, {$set: updateDoc}, function(err, result) {
       if (err) {
         handleError(res, err.message, "Failed to update blog");
       } else {
