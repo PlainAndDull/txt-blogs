@@ -61,7 +61,7 @@ export class BlogListComponent implements OnInit {
 
   addBlog = (blog: Blog) => {
     this.blogs.push(blog);
-    this.selectBlog(blog);
+    this.selectBlog(null);
     return this.blogs;
   }
 
