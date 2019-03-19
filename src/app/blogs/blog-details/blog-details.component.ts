@@ -24,18 +24,18 @@ export class BlogDetailsComponent {
   constructor (private blogService: BlogService) {}
 
   createBlog(blog: Blog) {
-    blog.title = cblog.title;
-    blog.author = cblog.author;
-    blog.content = cblog.content;
+    blog.title = this.cblog.title;
+    blog.author = this.cblog.author;
+    blog.content = this.cblog.content;
     this.blogService.createBlog(blog).then((newBlog: Blog) => {
       this.createHandler(newBlog);
     });
   }
 
   updateBlog(blog: Blog): void {
-    blog.title = cblog.title;
-    blog.author = cblog.author;
-    blog.content = cblog.content;
+    blog.title = this.cblog.title;
+    blog.author = this.cblog.author;
+    blog.content = this.cblog.content;
     this.blogService.updateBlog(blog).then((updatedBlog: Blog) => {
       this.updateHandler(updatedBlog);
     });
