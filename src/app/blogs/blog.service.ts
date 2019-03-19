@@ -31,7 +31,7 @@ export class BlogService {
 
     updateBlog(putBlog: Blog): Promise<void | Blog> {
       var putUrl = this.blogsUrl + '/' + putBlog._id;
-      return this.http.put(this.blogsUrl, putBlog)
+      return this.http.put(putUrl, putBlog)
                  .toPromise()
                  .then(response => response.json() as Blog)
                  .catch(this.handleError);
