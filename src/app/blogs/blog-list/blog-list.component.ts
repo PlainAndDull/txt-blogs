@@ -29,6 +29,7 @@ export class BlogListComponent implements OnInit {
           return blog;
         });
       });
+    this.copyBlog = new Blog();
   }
 
   private getIndexOfBlog = (blogId: String) => {
