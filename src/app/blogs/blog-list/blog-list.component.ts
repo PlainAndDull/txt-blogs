@@ -69,7 +69,7 @@ export class BlogListComponent implements OnInit {
     var idx = this.getIndexOfBlog(blog._id);
     if (idx !== -1) {
       this.blogs[idx] = blog;
-      this.selectBlog(blog);
+      this.selectBlog(null);
     }
     return this.blogs;
   }
