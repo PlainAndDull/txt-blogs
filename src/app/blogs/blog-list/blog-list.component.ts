@@ -61,7 +61,7 @@ export class BlogListComponent implements OnInit {
 
   addBlog = (blog: Blog) => {
     this.blogs.push(blog);
-    this.selectBlog(null);
+    this.selectBlog(blog);
     return this.blogs;
   }
 
@@ -69,7 +69,7 @@ export class BlogListComponent implements OnInit {
     var idx = this.getIndexOfBlog(blog._id);
     if (idx !== -1) {
       this.blogs[idx] = blog;
-      this.selectBlog(null);
+      this.selectBlog(blog);
     }
     return this.blogs;
   }
