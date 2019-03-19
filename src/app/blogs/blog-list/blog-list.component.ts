@@ -14,6 +14,7 @@ export class BlogListComponent implements OnInit {
 
   blogs: Blog[]
   selectedBlog: Blog
+  copyBlog: Blog
 
   constructor(private blogService: BlogService) { }
 
@@ -38,6 +39,11 @@ export class BlogListComponent implements OnInit {
 
   selectBlog(blog: Blog) {
     this.selectedBlog = blog;
+    if (blog != null) {
+      this.copyBlog.title = blog.title;
+      this.copyBlog.author = blog.author;
+      this.copyBlog.content = blog.content;
+    }
   }
 
   createNewBlog() {
@@ -46,7 +52,6 @@ export class BlogListComponent implements OnInit {
       author: '',
       content: ''
     };
-
     this.selectBlog(blog);
   }
 
@@ -61,7 +66,7 @@ export class BlogListComponent implements OnInit {
 
   addBlog = (blog: Blog) => {
     this.blogs.push(blog);
-    this.selectBlog(blog);
+    this.selectBlog(null);
     return this.blogs;
   }
 
@@ -69,7 +74,7 @@ export class BlogListComponent implements OnInit {
     var idx = this.getIndexOfBlog(blog._id);
     if (idx !== -1) {
       this.blogs[idx] = blog;
-      this.selectBlog(blog);
+      this.selectBlog(null);
     }
     return this.blogs;
   }
