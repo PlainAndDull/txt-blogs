@@ -28,6 +28,7 @@ export class BlogListComponent implements OnInit {
           return blog;
         });
       });
+    this.createNewBlog();
   }
 
   private getIndexOfBlog = (blogId: String) => {

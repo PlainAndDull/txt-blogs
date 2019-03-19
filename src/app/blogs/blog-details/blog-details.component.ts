@@ -19,6 +19,8 @@ export class BlogDetailsComponent {
   @Input()
   deleteHandler: Function;
 
+  newBlog: Blog;
+
   constructor (private blogService: BlogService) {}
 
   createBlog(blog: Blog) {
